@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day10 Activity</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: #ff4b2b;
+            text-align: center;
+            padding: 50px;
+            color: white;
+        }
+
+        
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            margin: auto;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            color: black;
+        }
+
+        
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        
+        select, input {
+            width: 80%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /*button sa submit*/
+        .submit-btn {
+            background: #ff4b2b;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        
+        .submit-btn:hover {
+            background: #d84315;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>📍 Select Your Location</h2>
+
+        <label for="date">Name:</label>
+        <input type="text" id="txt" name="txt">
+
+        <label for="city">Select a City:</label>
+        <select id="city" name="city">
+            <option value="Iloilo City">Iloilo City</option>
+            <option value="Guimaras">Guimaras</option>
+            <option value="Roxas">Roxas</option>
+            <option value="Antique">Antique</option>
+        </select>
+
+        <br><br>
+
+        <label for="date">Select a Date:</label>
+        <input type="date" id="date" name="date">
+
+        <br><br>
+
+        <button class="submit-btn" onclick="showPopup()">Submit</button>
+    </div>
+
+    <script>
+        function showPopup() {
+            let txt = document.getElementById(`txt`).value;
+            let city = document.getElementById(`city`).value;
+            let date = document.getElementById(`date`).value;
+
+            if (txt && city && date) {
+                alert(`Comment: ${txt}\nLocation Submitted: ${city}\nDate: ${date}`);
+            } else {
+                alert("Please fill in all fields before submitting.");
+            }
+        }
+    </script>
+
+</body>
+</html>
